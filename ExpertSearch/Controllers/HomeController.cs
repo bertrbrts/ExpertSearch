@@ -36,6 +36,12 @@ namespace ExpertSearch.Controllers
             return View("Index", homeViewModel);
         }
 
+        public IActionResult ViewProfile(int id)
+        {
+            ExpertViewModel expertViewModel = ExpertViewModel.Factory(id);
+            return View("ExpertView", expertViewModel);
+        }
+
         public IActionResult Privacy()
         {
             return View();

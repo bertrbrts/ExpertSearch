@@ -13,7 +13,7 @@ namespace ExpertSearch.ViewModels
 
         public HomeViewModel Factory()
         {
-            HomeViewModel viewModel = new HomeViewModel();
+            HomeViewModel viewModel = new();
             viewModel.Experts = Lib.Data.DataService.GetAll<Expert>();
             return viewModel;
         }

@@ -1,6 +1,6 @@
 ﻿@model ExpertSearch.ViewModels.HomeViewModel
 @{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Expert Search";
 }
 
 <div class="text-center">
@@ -19,6 +19,7 @@
     <table class="table">
         <thead>
             <tr>
+                <th scope="col"></th>
                 <th scope="col">Name</th>
                 <th scope="col">Short URL</th>
                 <th scope="col">Friends</th>
@@ -28,6 +29,7 @@
             @foreach (var item in Model.Experts)
             {
                 <tr>
+                    <td>@Html.ActionLink("View Profile", "ViewProfile", "Home", new { id = item.Id }, null)</td>
                     <td>@Html.DisplayFor(modelItem => item.FirstName) @Html.DisplayFor(modelItem => item.LastName)</td>
                     <td><a href=@item.WebSiteShortURL target="_blank">@item.WebSiteShortURL</a></td>
                     <td>20</td>

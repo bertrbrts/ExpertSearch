@@ -1,0 +1,32 @@
+﻿@model ExpertSearch.ViewModels.ExpertViewModel
+@{
+    ViewData["Title"] = "Expert";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Expert</h1>
+<div class="text-center">
+    <h1 class="display-4">@Model.Expert.FirstName @Model.Expert.LastName Profile</h1>
+    <h2>Long URL: <a href=@Model.Expert.WebSiteLongURL target="_blank">@Model.Expert.WebSiteLongURL</a></h2>
+    <h2>Short URL: <a href=@Model.Expert.WebSiteShortURL target="_blank">@Model.Expert.WebSiteShortURL</a></h2>
+    <h3>H1 Headings: @string.Join(',', @Model.Expert.Heading1)</h3>
+    <h3>H2 Headings: @string.Join(',', @Model.Expert.Heading2)</h3>
+    <h3>H3 Headings: @string.Join(',', @Model.Expert.Heading3)</h3>
+    <br />
+    <h3>Friends:</h3>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Friends)
+            {
+                <tr>
+                    <td>@Html.ActionLink($"{item.FirstName} {item.LastName}", "ViewProfile", "Home", new { id = item.Id }, null)</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
