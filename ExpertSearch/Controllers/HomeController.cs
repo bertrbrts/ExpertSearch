@@ -26,7 +26,9 @@ namespace ExpertSearch.Controllers
         [HttpPost]
         public IActionResult AddExpert(HomeViewModel homeViewModel)
         {
-            Expert exp = new(homeViewModel.NameInput, homeViewModel.WebsiteURLInput);
+            var config = new ConfigurationBuilder().AddJsonFile("appsettings.json").Build();
+            var apiKey = config.GetValue<string>("BitlyApiKey");
+            Expert exp = new(Request.Host.Port, apiKey, homeViewModel.NameInput, homeViewModel.WebsiteURLInput);
             Lib.Data.DataService.Add<Expert>(exp);
 
             homeViewModel.Experts = Lib.Data.DataService.GetAll<Expert>();
