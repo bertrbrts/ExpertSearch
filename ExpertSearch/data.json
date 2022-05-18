@@ -14,7 +14,29 @@
         "Los Angeles, California"
       ],
       "webSiteLongURL": "https://127.0.0.1/static/AdamJones.html",
-      "webSiteShortURL": "https://bit.ly/3LEoY2Z"
+      "webSiteShortURL": "https://bit.ly/3LEoY2Z",
+      "friendIDs": [
+        2
+      ]
+    },
+    {
+      "id": 2,
+      "firstName": "Jimi",
+      "lastName": "Hendrix",
+      "heading1": [
+        "Jimi Hendrix"
+      ],
+      "heading2": [
+        "Cheese Expert"
+      ],
+      "heading3": [
+        "Seattle, Washington"
+      ],
+      "webSiteLongURL": "https://127.0.0.1/static/jimihendrix.html",
+      "webSiteShortURL": "https://bit.ly/3sJMYe7",
+      "friendIDs": [
+        1
+      ]
     }
   ]
 }

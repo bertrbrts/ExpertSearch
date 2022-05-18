@@ -42,6 +42,28 @@ namespace ExpertSearch.Controllers
             return View("ExpertView", expertViewModel);
         }
 
+        public IActionResult AddFriend(int expertID, int friendID)
+        {
+            var allExperts = Lib.Data.DataService.GetAll<Expert>();
+            Expert? expert = allExperts.FirstOrDefault(e => e.Id == expertID);
+            if (expert != null)
+            {
+                expert.FriendIDs.Add(friendID);
+                Lib.Data.DataService.Update(expertID, expert);
+            }
+
+            Expert? friend = allExperts.FirstOrDefault(e => e.Id == friendID);
+            if (friend != null)
+            {
+                friend.FriendIDs.Add(expertID);
+                Lib.Data.DataService.Update(friendID, friend);
+            }
+
+            ExpertViewModel expertViewModel = ExpertViewModel.Factory(expertID);
+
+            return View("ExpertView", expertViewModel);
+        }
+
         public IActionResult Privacy()
         {
             return View();

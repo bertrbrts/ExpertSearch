@@ -13,6 +13,7 @@ namespace ExpertSearch.Lib
         public List<string> Heading3 { get; set; }
         public string WebSiteLongURL { get; set; }
         public string WebSiteShortURL { get; set; }
+        public List<int> FriendIDs { get; set; } = new List<int>();
 
         private HtmlParser _parser;
 
@@ -39,5 +40,7 @@ namespace ExpertSearch.Lib
             Heading2 = _parser.GetH2Elements();
             Heading3 = _parser.GetH3Elements();
         }
+
+
     }
 }

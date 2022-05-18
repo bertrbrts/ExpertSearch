@@ -18,9 +18,9 @@ namespace ExpertSearch.Test.Data
                 new Expert()
                 {
                     FirstName = "Test",
-                    Heading1 = "Test Heading1",
-                    Heading2 = "Test Heading2",
-                    Heading3 = "Test Heading3",
+                    Heading1 = new List<string>{ "Test Heading1" },
+                    Heading2 = new List<string>{ "Test Heading2" },
+                    Heading3 = new List<string>{ "Test Heading3" },
                     Id = 1,
                     LastName = "User1",
                     WebSiteLongURL = "www.longurl.com",
@@ -29,9 +29,9 @@ namespace ExpertSearch.Test.Data
                 new Expert()
                 {
                     FirstName = "Test",
-                    Heading1 = "Test Heading1",
-                    Heading2 = "Test Heading2",
-                    Heading3 = "Test Heading3",
+                    Heading1 = new List<string>{ "Test Heading1" },
+                    Heading2 = new List<string>{ "Test Heading2" },
+                    Heading3 = new List<string>{ "Test Heading3" },
                     Id = 1,
                     LastName = "User2",
                     WebSiteLongURL = "www.longurl.com",
@@ -40,9 +40,9 @@ namespace ExpertSearch.Test.Data
                 new Expert()
                 {
                     FirstName = "Test",
-                    Heading1 = "Test Heading1",
-                    Heading2 = "Test Heading2",
-                    Heading3 = "Test Heading3",
+                    Heading1 = new List<string>{ "Test Heading1" },
+                    Heading2 = new List<string>{ "Test Heading2" },
+                    Heading3 = new List<string>{ "Test Heading3" },
                     Id = 1,
                     LastName = "User3",
                     WebSiteLongURL = "www.longurl.com",
