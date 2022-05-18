@@ -13,6 +13,18 @@
     <h3>H2 Headings: @string.Join(',', @Model.Expert.Heading2)</h3>
     <h3>H3 Headings: @string.Join(',', @Model.Expert.Heading3)</h3>
     <br />
+
+    @using (Html.BeginForm("SearchExpert", "Home", FormMethod.Post))
+    {
+        @Html.TextBoxFor(model => Model.SearchInput)
+         <input type="hidden" id="" value=@Model.Expert.Id name="id" />
+        <button type="submit">Search</button>
+    }
+    @if (Model.MutualFriends.Count > 0 && Model.ExpertSearchResult != null)
+    {
+        <h3>Search Result: @Model.Expert.FirstName @Model.Expert.LastName > @Model.MutualFriends.First().FirstName @Model.MutualFriends.First().LastName > @Model.ExpertSearchResult.FirstName @Model.ExpertSearchResult.LastName (@Model.ExpertSearchResult.Heading2.First().ToString())</h3>      
+    }
+
     <h3>Add Friends:</h3>
     <table class="table">
         <thead>
@@ -31,7 +43,6 @@
             }
         </tbody>
     </table>
-
 
     <h3>Current Friends:</h3>
     <table class="table">

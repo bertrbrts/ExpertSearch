@@ -7,6 +7,8 @@ namespace ExpertSearch.ViewModels
         public Expert? Expert { get; set; }
         public List<Expert> Friends { get; set; } = new List<Expert>();
         public List<Expert> NotFriends { get; set; } = new List<Expert>();
+        public List<Expert> MutualFriends { get; set; } = new List<Expert>();
+        public Expert? ExpertSearchResult = null;
         public string SearchInput { get; set; }
 
         public static ExpertViewModel Factory(int id)

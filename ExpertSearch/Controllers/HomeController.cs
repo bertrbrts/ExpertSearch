@@ -36,6 +36,40 @@ namespace ExpertSearch.Controllers
             return View("Index", homeViewModel);
         }
 
+        [HttpPost]
+        public IActionResult SearchExpert(ExpertViewModel expertViewModel, int id)
+        {
+            ExpertViewModel newExpVM = ExpertViewModel.Factory(id);
+
+            var allExperts = Lib.Data.DataService.GetAll<Expert>();
+            var currentExpert = newExpVM.Expert;
+
+            string searchString = expertViewModel.SearchInput.ToUpper();
+             
+            var result = allExperts.FirstOrDefault(x => 
+                x.Heading1.Any(h => h.ToUpper().Contains(searchString)) ||
+                x.Heading2.Any(h => h.ToUpper().Contains(searchString)) ||
+                x.Heading3.Any(h => h.ToUpper().Contains(searchString)));
+
+            if (result != null)
+            {
+                newExpVM.ExpertSearchResult = result;
+
+                var dupes = result.FriendIDs.Intersect(newExpVM.Expert.FriendIDs);
+                if (dupes.Any())
+                {
+                    foreach (var d in dupes)
+                    {
+                        var mutFriend = allExperts.FirstOrDefault(e => e.Id == d);
+                        if (mutFriend != null)
+                            newExpVM.MutualFriends.Add(mutFriend);
+                    }
+                }
+            }
+
+            return View("ExpertView", newExpVM);
+        }
+
         public IActionResult ViewProfile(int id)
         {
             ExpertViewModel expertViewModel = ExpertViewModel.Factory(id);

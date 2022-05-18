@@ -35,8 +35,62 @@
       "webSiteLongURL": "https://127.0.0.1/static/jimihendrix.html",
       "webSiteShortURL": "https://bit.ly/3sJMYe7",
       "friendIDs": [
-        1
+        1,
+        4
       ]
+    },
+    {
+      "id": 3,
+      "firstName": "Eric",
+      "lastName": "Clapton",
+      "heading1": [
+        "Eric Clapton"
+      ],
+      "heading2": [
+        "Silverware Expert"
+      ],
+      "heading3": [
+        "United Kingdom"
+      ],
+      "webSiteLongURL": "https://127.0.0.1/static/ericclapton.html",
+      "webSiteShortURL": "https://bit.ly/3LEEX0Z",
+      "friendIDs": []
+    },
+    {
+      "id": 4,
+      "firstName": "Neil",
+      "lastName": "Young",
+      "heading1": [
+        "Neil Young"
+      ],
+      "heading2": [
+        "Farm Animal Expert"
+      ],
+      "heading3": [
+        "Canda"
+      ],
+      "webSiteLongURL": "https://127.0.0.1/static/neilyoung.html",
+      "webSiteShortURL": "https://bit.ly/3MtZLcu",
+      "friendIDs": [
+        2
+      ]
+    },
+    {
+      "id": 5,
+      "firstName": "Tom",
+      "lastName": "Morello",
+      "heading1": [
+        "Tom Morello"
+      ],
+      "heading2": [
+        "Dog Walking Expert"
+      ],
+      "heading3": [
+        "Los Angeles, California"
+      ],
+      "webSiteLongURL": "https://127.0.0.1/static/tommorello.html",
+      "webSiteShortURL": "https://bit.ly/3yLshCk",
+      "friendIDs": []
     }
   ]
 }
