@@ -1,6 +1,4 @@
-﻿using JsonFlatFileDataStore;
-
-namespace ExpertSearch.Lib
+﻿namespace ExpertSearch.Lib
 {
     public class Expert
     {
@@ -13,11 +11,13 @@ namespace ExpertSearch.Lib
         public string WebSiteLongURL { get; set; }
         public string WebSiteShortURL { get; set; }
 
-        public async Task AddAync()
+        public Expert() { }
+        public Expert(string name, string url)
         {
-            using var store = new DataStore("data.json");
-            var collection = store.GetCollection<Expert>();
-            await collection.InsertOneAsync(this);
+            Id = 1;
+            FirstName = name.Split(' ')[0];
+            LastName = name.Split(' ')[1];
+            WebSiteLongURL = url;
         }
     }
 }

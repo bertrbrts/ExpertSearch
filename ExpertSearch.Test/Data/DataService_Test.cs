@@ -52,22 +52,22 @@ namespace ExpertSearch.Test.Data
         }
 
         [Test]
-        public async Task ExecuteAsync()
+        public void Execute()
         {
             foreach (var e in users)
             {
-                await Lib.Data.DataService.AddAync<Expert>(e);
+                Lib.Data.DataService.Add<Expert>(e);
             }
-            var allExperts = Lib.Data.DataService.GetAllAync<Expert>();
+            var allExperts = Lib.Data.DataService.GetAll<Expert>();
             Assert.IsTrue(allExperts.Count == users.Count);
         }
 
         [TearDown]
-        public async Task TearDownAsync()
+        public void TearDownAsync()
         {
             foreach (var u in users)
             {
-                await Lib.Data.DataService.DeleteAsync<Expert>(u.Id);
+                Lib.Data.DataService.Delete<Expert>(u.Id);
             }
         }
     }

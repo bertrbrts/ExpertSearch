@@ -1,8 +1,38 @@
-﻿@{
+﻿@model ExpertSearch.ViewModels.HomeViewModel
+@{
     ViewData["Title"] = "Home Page";
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4">Expert Search</h1>
+
+    <h2>Add User</h2>
+    @using (Html.BeginForm("AddExpert", "Home", FormMethod.Post))
+    {
+        @Html.TextBoxFor(model => model.NameInput)
+        @Html.ValidationMessageFor(model => model.NameInput)
+        @Html.TextBoxFor(model => model.WebsiteURLInput)
+        @Html.ValidationMessageFor(model => model.WebsiteURLInput)
+        <button type="submit">AddExpert</button>
+    }
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Short URL</th>
+                <th scope="col">Friends</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Experts)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => item.FirstName) @Html.DisplayFor(modelItem => item.LastName)</td>
+                    <td>@Html.DisplayFor(modelItem => item.WebSiteShortURL)</td>
+                    <td>20</td>
+                </tr>
+            }
+        </tbody>
+    </table>
 </div>
